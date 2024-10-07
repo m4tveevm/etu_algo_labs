@@ -5,7 +5,7 @@ from solution import Solution
 
 class MyTestCase(unittest.TestCase):
     def setup(self):
-        self.sol = Solution()
+        self.__sol = Solution()
 
     def test_algo(self):
         self.setup()
@@ -44,4 +44,4 @@ class MyTestCase(unittest.TestCase):
         ]
 
         for expr, expected in test_cases:
-            self.assertEqual(self.sol.infix_to_postfix(expr), expected)
+            self.assertEqual(self.__sol.infix_to_postfix(expr), expected)
