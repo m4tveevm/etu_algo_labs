@@ -9,7 +9,7 @@ class TestQueue(unittest.TestCase):
         self.__queue = Queue()
 
     def test_push_and_pop(self):
-        setup()
+        self.setup()
         self.__queue.push(1)
         self.__queue.push(2)
         self.__queue.push(3)

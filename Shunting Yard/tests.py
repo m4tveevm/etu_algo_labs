@@ -4,7 +4,6 @@ from solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
-
     def setup(self):
         self.sol = Solution()
 
