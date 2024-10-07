@@ -4,11 +4,12 @@ from solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
-    def __init__(self):
-        super().__init__()
+
+    def setup(self):
         self.sol = Solution()
 
     def test_algo(self):
+        self.setup()
         test_cases = [
             ("3 + 4 * 5", ["3", "4", "5", "*", "+"]),
             ("( 3 + 4 ) * 5", ["3", "4", "+", "5", "*"]),

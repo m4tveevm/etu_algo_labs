@@ -5,11 +5,11 @@ from .Stack import Stack
 
 
 class TestQueue(unittest.TestCase):
-    def __init__(self):
-        super().__init__()
+    def setup(self):
         self.__queue = Queue()
 
     def test_push_and_pop(self):
+        setup()
         self.__queue.push(1)
         self.__queue.push(2)
         self.__queue.push(3)
@@ -20,18 +20,20 @@ class TestQueue(unittest.TestCase):
         self.assertIsNone(self.__queue.pop())
 
     def test_pop_empty(self):
+        self.setup()
         self.assertIsNone(self.__queue.pop())
 
     def test_len_empty(self):
+        self.setup()
         self.assertEqual(len(self.__queue), 0)
 
 
 class TestStack(unittest.TestCase):
-    def __init__(self):
-        super().__init__()
+    def setup(self):
         self.__stack = Stack()
 
     def test_push_and_pop(self):
+        self.setup()
         self.__stack.push(1)
         self.__stack.push(2)
         self.__stack.push(3)
@@ -42,9 +44,11 @@ class TestStack(unittest.TestCase):
         self.assertIsNone(self.__stack.pop())
 
     def test_pop_empty(self):
+        self.setup()
         self.assertIsNone(self.__stack.pop())
 
     def test_len_empty(self):
+        self.setup()
         self.assertEqual(len(self.__stack), 0)
 
 
