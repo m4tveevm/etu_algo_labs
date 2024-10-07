@@ -4,11 +4,7 @@ from solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
-    def setup(self):
-        self.__sol = Solution()
-
     def test_algo(self):
-        self.setup()
         test_cases = [
             ("3 + 4 * 5", ["3", "4", "5", "*", "+"]),
             ("( 3 + 4 ) * 5", ["3", "4", "+", "5", "*"]),
@@ -44,4 +40,4 @@ class MyTestCase(unittest.TestCase):
         ]
 
         for expr, expected in test_cases:
-            self.assertEqual(self.__sol.infix_to_postfix(expr), expected)
+            self.assertEqual(Solution().infix_to_postfix(expr), expected)
