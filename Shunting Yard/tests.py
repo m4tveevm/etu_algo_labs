@@ -4,7 +4,8 @@ from solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
-    def setUp(self) -> None:
+    def __init__(self):
+        super().__init__()
         self.sol = Solution()
 
     def test_algo(self):
