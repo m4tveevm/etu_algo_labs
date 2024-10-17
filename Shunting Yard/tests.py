@@ -41,3 +41,9 @@ class MyTestCase(unittest.TestCase):
 
         for expr, expected in test_cases:
             self.assertEqual(Solution().infix_to_postfix(expr), expected)
+
+    def test_invalid_string(self):
+        self.assertRaises(
+            AssertionError, Solution().infix_to_postfix, "(1 + ((2)) /) 52)"
+        )
+        self.assertRaises(AssertionError, Solution().infix_to_postfix, ")(")
