@@ -78,7 +78,6 @@ def find_runs(arr, minrun):
     while i < n:
         run_start = i
         run_end = i + 1
-
         if run_end < n and arr[run_end] < arr[run_start]:
             while run_end < n and arr[run_end] < arr[run_end - 1]:
                 run_end += 1
