@@ -35,12 +35,8 @@ class TestTimSort(unittest.TestCase):
         timsort(arr)
         self.assertEqual(arr, [1, 1, 2, 2, 3, 3])
 
-
     def test_large_array(self):
         arr = list(range(10000, 0, -1))
         expected = sorted(arr)
         timsort(arr)
         self.assertEqual(arr, expected)
-
-
-
