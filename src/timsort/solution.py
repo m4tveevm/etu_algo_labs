@@ -1,7 +1,7 @@
-from algo.Stack import Stack
+from src.algo.stack import Stack
 
 
-def calculate_minrun(n):
+def calculate_min_run(n):
     count = 0
     while n >= 64:
         count |= n & 1
@@ -9,7 +9,7 @@ def calculate_minrun(n):
     return n + count
 
 
-def insertion_sort(arr, left, right):
+def insertion_sort(arr, left: list, right):
     for i in range(left + 1, right + 1):
         key_item = arr[i]
         j = i - 1
@@ -50,15 +50,16 @@ def merge(arr, start, mid, end):
 
         if count >= gallop_trigger:
             if left[i] <= right[j]:
-                idx = binary_search(right, left[i], j)
-                arr[start + k : start + k + idx - j] = right[j:idx]
-                k += idx - j
-                j = idx
+                index = binary_search(right, left[i], j)
+                arr[start + k : start + k + index - j] = right[j:index]
+                k += index - j
+                j = index
             else:
-                idx = binary_search(left, right[j], i)
-                arr[start + k : start + k + idx - i] = left[i:idx]
-                k += idx - i
-                i = idx
+                index = binary_search(left, right[j], i)
+                arr[start + k : start + k + index - i] = left[i:index]
+                k += index - i
+                i = index
+
     while i < len(left):
         arr[start + k] = left[i]
         i += 1
@@ -99,7 +100,7 @@ def find_runs(arr, minrun):
 
 def timsort(arr):
     n = len(arr)
-    minrun = calculate_minrun(n)
+    minrun = calculate_min_run(n)
     runs = find_runs(arr, minrun)
 
     stack = Stack()

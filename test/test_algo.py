@@ -1,9 +1,7 @@
 import unittest
 
-from .Queue import Queue
-from .Stack import Stack
-
-# from .LineCheck import is_valid
+from src.algo.queue import Queue
+from src.algo.stack import Stack
 
 
 class TestQueue(unittest.TestCase):
@@ -52,7 +50,3 @@ class TestStack(unittest.TestCase):
     def test_len_empty(self):
         self.setup()
         self.assertEqual(len(self.__stack), 0)
-
-
-if __name__ == "__main__":
-    unittest.main()

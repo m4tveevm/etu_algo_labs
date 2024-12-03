@@ -1,7 +1,7 @@
-from .Stack import Stack
+from src.algo.stack import Stack
 
 
-def is_valid(bracket_sequence):
+def validate_brackets(bracket_sequence):
     stack = Stack()
     brackets_dict = {
         "[": "]",

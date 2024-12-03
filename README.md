@@ -37,8 +37,9 @@ For a visual demonstration of the algorithm, check out the following video: [Shu
 The core implementation is contained within the `Solution` class. Here’s a brief overview of the code:
 
 ```python
-from algo.Queue import Queue
-from algo.Stack import Stack
+from src.algo import Queue
+from src.algo import Stack
+
 
 class Solution:
     def __init__(self):
@@ -61,7 +62,7 @@ class Solution:
                 self.__stack.pop()
             else:
                 while self.__stack and self.get_priority(
-                    self.__stack.top.data
+                        self.__stack.top.data
                 ) >= self.get_priority(elem):
                     self.__queue.push(self.__stack.pop())
                 self.__stack.push(elem)
