@@ -16,7 +16,8 @@ class TestRedBlackTree(unittest.TestCase):
         for val in self.values:
             self.tree.insert(val)
 
-    def is_valid_red_black_tree(self, tree):
+    @staticmethod
+    def is_valid_red_black_tree(tree):
         """
         Checks whether the given red-black tree satisfies all red-black tree properties:
 

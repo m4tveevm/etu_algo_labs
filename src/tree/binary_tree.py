@@ -30,7 +30,8 @@ class BinaryTree:
             )
         return node
 
-    def _min_value_node(self, node):
+    @staticmethod
+    def _min_value_node(node):
         current = node
         while current.get_left() is not None:
             current = current.get_left()

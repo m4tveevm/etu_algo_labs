@@ -9,16 +9,16 @@ from src.tree.traversal import (
 )
 
 
-def read_tree_from_file(filename):
-    with open(filename, "r") as file:
+def read_tree_from_file(file_name):
+    with open(file_name, "r") as file:
         tree_string = file.read().strip()
         parser = TreeParser(tree_string)
         root = parser.parse()
         return root
 
 
-def build_red_black_tree(binary_root):
-    rb_tree = RedBlackTree()
+def build_red_black_tree(bin_root):
+    tree = RedBlackTree()
 
     def insert_node(node):
         if node:
@@ -26,12 +26,12 @@ def build_red_black_tree(binary_root):
                 value = int(node.get_value())
             except ValueError:
                 value = node.get_value()
-            rb_tree.insert(value)
+            tree.insert(value)
             insert_node(node.get_left())
             insert_node(node.get_right())
 
-    insert_node(binary_root)
-    return rb_tree
+    insert_node(bin_root)
+    return tree
 
 
 def demonstrate_traversals(tree):
