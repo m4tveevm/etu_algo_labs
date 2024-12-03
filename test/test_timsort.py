@@ -1,7 +1,6 @@
-import random
 import unittest
 
-from solution import timsort
+from src.timsort.solution import timsort
 
 
 class TestTimSort(unittest.TestCase):

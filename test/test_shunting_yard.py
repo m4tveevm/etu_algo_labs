@@ -1,6 +1,6 @@
 import unittest
 
-from solution import Solution
+from src.ShuntingYard.solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
@@ -15,7 +15,21 @@ class MyTestCase(unittest.TestCase):
             ("2 * ( 3 + ( 4 * 5 ) )", ["2", "3", "4", "5", "*", "+", "*"]),
             (
                 "3 + 4 * 2 / ( 1 - 5 ) ^ 2 ^ 3",
-                ["3", "4", "2", "*", "1", "5", "-", "2", "^", "3", "^", "/", "+"],
+                [
+                    "3",
+                    "4",
+                    "2",
+                    "*",
+                    "1",
+                    "5",
+                    "-",
+                    "2",
+                    "^",
+                    "3",
+                    "^",
+                    "/",
+                    "+",
+                ],
             ),
             ("5", ["5"]),
             ("+", ["+"]),

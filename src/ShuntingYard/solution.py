@@ -1,6 +1,6 @@
-from algo.LineCheck import is_valid
-from algo.Queue import Queue
-from algo.Stack import Stack
+from src.algo.line_check import validate_brackets
+from src.algo.queue import Queue
+from src.algo.stack import Stack
 
 
 class Solution:
@@ -13,7 +13,7 @@ class Solution:
         return {"+": 0, "-": 0, "*": 1, "/": 1, "^": 2}.get(elem, -1)
 
     def infix_to_postfix(self, line: str):
-        assert is_valid(line)
+        assert validate_brackets(line)
         for elem in line.split():
             if elem.isnumeric():
                 self.__queue.push(elem)
