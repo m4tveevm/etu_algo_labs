@@ -1,4 +1,4 @@
-from .traversal import TraversalStrategy
+from src.tree.traversal import TraversalStrategy
 
 
 class BinaryTree:

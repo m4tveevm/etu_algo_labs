@@ -1,6 +1,6 @@
 import unittest
 
-from src.ShuntingYard.solution import Solution
+from src.shunting_yard.solution import Solution
 
 
 class MyTestCase(unittest.TestCase):
